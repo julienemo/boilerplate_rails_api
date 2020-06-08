@@ -1,4 +1,93 @@
-inherit_from: .rubocop_todo.yml
+AllCops:
+  Exclude:
+    - "bin/bundle"
+    - "config/**/*"
+    - "db/schema.rb"
+    - "app/channels/**/*"
 
+# Styles
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/ExpandPathArguments:
+  Enabled: true
+
+Style/IfUnlessModifier:
+  Enabled: true
+
+Style/NumericLiterals:
+  Strict: false
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Style/TrailingCommaInHashLiteral:
+  EnabledStyle: no_comma
+
+# Metrics
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+# Layouts
 Layout/IndentationWidth:
   Width: 2
+
+Layout/LineLength:
+  Max: 100
+
+Layout/IndentationStyle:
+  Enabled: false
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: true
+
+Layout/EmptyLines:
+  Enabled: true
+
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: true
+
+Layout/ExtraSpacing:
+  AllowForAlignment: true
+
+Layout/SpaceAfterColon:
+  Enabled: true
+
+Layout/SpaceAroundOperators:
+  AllowForAlignment: true
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_first_argument
+
+Layout/EmptyLinesAroundBlockBody:
+  EnforcedStyle: no_empty_lines
+
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: empty_lines_except_namespace
+
+Layout/IndentationConsistency:
+  EnforcedStyle: normal
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: aligned
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  EnforcedStyle: no_space
+
+Layout/TrailingEmptyLines:
+  EnforcedStyle: final_newline

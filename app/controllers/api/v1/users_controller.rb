@@ -1,4 +1,5 @@
 class Api::V1::UsersController < Api::ApiController
+
   before_action :authenticate_user!, except: %i[show index]
   before_action :set_user, only: %i[show update destroy]
 
@@ -24,11 +25,13 @@ class Api::V1::UsersController < Api::ApiController
   end
 
   private
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    def user_params
-      params.require(:user).permit(:username)
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:username)
+  end
+
 end
